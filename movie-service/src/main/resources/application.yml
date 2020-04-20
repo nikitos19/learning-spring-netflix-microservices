@@ -1,0 +1,22 @@
+spring:
+  application:
+    name: movie-service
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017/gallerydb
+
+server:
+  port: 8083
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: ${EUREKA_URI:http://localhost:8761/eureka}
+  instance:
+    preferIpAddress: true
+
+movie-service:
+  ribbon:
+    eureka:
+      enabled: true
+    ServerListRefreshInterval: 1000
