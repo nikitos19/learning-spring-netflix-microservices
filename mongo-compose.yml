@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+  mongo:
+    container_name: mongo-server
+    image: mongo:latest
+    ports:
+      - "27017:27017"
+
+networks:
+  default:
+    driver: bridge

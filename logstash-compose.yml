@@ -1,0 +1,19 @@
+version: '3'
+
+services:
+  logstash:
+    container_name: logstash
+    image: docker.elastic.co/logstash/logstash:7.6.2
+    networks:
+      - elk
+    ports:
+      - "5046:5046"
+    volumes:
+      - logstash:/usr/share/logstash
+
+networks:
+  elk:
+
+volumes:
+  logstash:
+    driver: local
